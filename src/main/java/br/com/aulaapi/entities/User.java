@@ -4,10 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedBy;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -25,5 +23,8 @@ public class User {
     @Basic
     @Column(name = "IDADE")
     private Integer age;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Phone> phones;
 
 }
