@@ -14,6 +14,7 @@ public class User {
 
     @Id
     @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)     //informa ao JPA que o BD ira lidar com a chave
     private Long id;
 
     @Basic
