@@ -1,5 +1,6 @@
 package br.com.aulaapi.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedBy;
@@ -26,6 +27,7 @@ public class User {
     private Integer age;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Phone> phones;
 
 }
