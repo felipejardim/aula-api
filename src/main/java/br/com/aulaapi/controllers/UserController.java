@@ -35,6 +35,6 @@ public class UserController {
         return userService.createUser(user);
     }       //ok
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping()
     public Boolean deleteUser(@RequestBody User user){ return userService.deleteUser(user.getId()); }
 }

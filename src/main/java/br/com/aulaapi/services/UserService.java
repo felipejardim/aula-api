@@ -36,6 +36,6 @@ public class UserService {
     public Boolean deleteUser (long id){
         userRepository.deleteById(id);
         User u = userRepository.findById(id).orElse(null);
-        return u.equals(null);
+        return u == null?true:false;
     }
 }
